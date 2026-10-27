@@ -1,0 +1,108 @@
+﻿Assignment-1
+
+
+Click_button:
+1. Take a label
+1. Create an empty page with .aspx extension
+2. Take a button from toolbox give name as click
+3. Double click on button and write text message with label 
+
+
+Three Buttons will print text by using css in label(three color button)
+1. Take Web From project and drag three buttons as red, green, blue
+2. And then in source in html inside head tag add css class 
+3. Double click on buttons and write code for button red like Label.Text=””and then and Label.Visible=true; and then Label.CssClass=”red_bg”;
+4. Run.
+
+
+AutoPostBack using a text in label we can apply bold, italic, underline, select font, select size:
+1. First take a Web Form page and drag dropdown list from toolbox
+2. And enable AutoPostBack page if not showing then write click on that dropdown list and make AutoPostBack true
+3. Take some checkboxes make sure enable their AutoPostBack 
+4. Write code to check whether the checkboxes checked or not and then
+5. Run 
+
+
+design a web application that accepts a user's name, breakfast selection, and  delivery time and confirms the selection using one Label control.
+
+
+
+
+
+
+
+
+
+
+
+
+Assignment-2
+
+
+Navigable control:
+1. First we have to create a page SiteMap with .sitemap extension in that in that we will define the will be the structure of our navigation
+2. Create multiple Web From like Home inside about us service inside service take services
+3. On Home.aspx page take menu and tree view from toolbox and make configuration by the dropdown arrow along with controller add .sitemap page 
+4. run
+
+
+Calendar Controller:
+1. Open visual studio and take web form
+2. From the toolbox drag a calendar controller
+3. Go to the property then in this ⚡ and check for DayRender and then double click on DayRender
+4. And inside yourCalenderId_DayRender() method we have to write the logic and then run it.
+
+
+Registration Form
+Validation control
+1. First take a label and then type some text like name and 
+2. in front of text take a textbox and 
+3. in front of textbox take a RequiredField validation do for every text and textboxes and you take another also
+4. Now right click on the validation which you dropped from toolbox and
+5. go in property and then 
+6. go to ControlToValidate and select a your textbox id and 
+7. then give a value for ValidationGroup and make sure the value of ValidationGroup must be same for all validation
+8. And then double click on submit button and write code and then 
+9. go and double click on cancel button and write code for their functionality and 
+10. then simply run
+
+
+
+
+
+
+Master Page:
+Open a new project and add new item take Web Forms Master Page (with extension of .master) now take two  Web Form With Master Page  with the name of Home and About you can write a some text representation in Home and About and in (.master extension)’s both pages with<a ref>tag
+
+
+
+
+State Management:
+It is not a, any special controls or items take a normal web form and in side take a textbox and below textbox add two buttons store and display and on store button add a simple code ViewState[“any_string_youcantake”]= textbox id. Text and in display write code for display the text and run.
+
+
+
+
+
+
+HiddenFieldContorller:
+1. First add a Web From page 
+2. in that take a HiddenField Controller from toolbox and 
+3. Then right click on HiddenField Controller and 
+4. go in property and then in value field add some text otherwise it will give error and 
+5. now take an empty Web Form and 
+6. double click on the empty page on the top written as body or div and 
+7. then a code file will be open and then write code over there 
+8. and then the  id of this empty page add in the first page which has next button 
+9. right click on that and then 
+10. click on property and 
+11. the id of this empty page fill in postbackurl field of first page which has next button
+
+
+QueryString:
+1. Fist take a page with design of textbox and a button as send with this and 
+2. Take a empty page 
+3. For the first page on the send button write this code Response.Redirect("EmptyPageQueryString.aspx?msg=" + TextBox1.Text);
+Basically it taking message and retrieve on the empty page thats why we give as emptypage.asp.
+4. Double click on empty page and redirect with the same page 
+5. Run.
