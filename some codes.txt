@@ -1,0 +1,94 @@
+ViewState:
+StoreButton: ViewState["msg"] = TextBox1.Text; 
+displayButton: Label2.Text += "You have entered" + ViewState["msg"].ToString(); 
+
+HiddenField:
+must be give the value in hidden field value="abc"
+NextButton:   Response.Write(Request.Form["HiddenField1"].ToString()); 
+
+QueryString:
+firstPage:
+ protected void Button1_Click(object sender, EventArgs e) 
+        { 
+            Response.Redirect("QueryString2.aspx?msg=" + TextBox1.Text); 
+        }
+secondPage:
+  protected void Page_Load(object sender, EventArgs e) 
+        { 
+            if (Request.QueryString["msg"] != null ) 
+            { 
+                Response.Write(Request.QueryString["msg"].ToString()); 
+            } 
+            else 
+            { 
+                Response.Redirect("QueryString.aspx"); 
+            } 
+Weight Calculation using cookie
+
+  protected void Button1_Click(object sender, EventArgs e) 
+        { 
+            HttpCookie cookie = new HttpCookie("data"); 
+            cookie.Values["name"] = TextBox1.Text; 
+            cookie.Values["age"] = TextBox2.Text; 
+            cookie.Values["height"] = TextBox3.Text; 
+            cookie.Values["email"] = TextBox4.Text; 
+            string gender = ""; 
+            if (RadioButton1.Checked) { gender = "Male"; } 
+            if (RadioButton2.Checked) { gender = "Female"; } 
+            cookie.Values["gender"] = gender; 
+            Response.Cookies.Add(cookie); 
+            if (gender == "Male") 
+                Response.Redirect("~/male.aspx"); 
+            else 
+                Response.Redirect("~/female.aspx"); 
+ 
+ 
+        }
+
+male.aspx same with female
+ protected void Page_Load(object sender, EventArgs e) 
+        { 
+            int weight = 0; 
+            string name = Request.Cookies["data"].Values["name"]; 
+            string age = Request.Cookies["data"].Values["age"]; 
+            string height = Request.Cookies["data"].Values["height"]; 
+            string email = Request.Cookies["data"].Values["email"]; 
+            if (int.Parse(height) == 150) { weight = 60; } 
+            if (int.Parse(height) == 160) { weight = 65; } 
+            if (int.Parse(height) == 170) { weight = 70; } 
+            if (int.Parse(height) == 180) { weight = 75; } 
+            if (int.Parse(height) == 190) { weight = 80; } 
+            Response.Write("Name : " + name + 
+                "<br/>Age : " + age + 
+                "<br/>Height : " + height + 
+                "<br/>Email : " + email + 
+                "<br/>Ideal Weight : " + weight); 
+        } 
+
+
+count how many people comes to your website
+using globle.asax
+protected void Application_Start(object sender, EventArgs e)
+{
+    Application["sessioncount"] = 0;
+}
+
+ protected void Session_Start(object sender, EventArgs e)
+ {
+     Application.Lock();
+     int count = (int)Application["sessioncount"];
+     Application["sessioncount"] = count + 1;
+     Application.UnLock();
+ }
+
+protected void Session_End(object sender, EventArgs e)
+{
+    Application.Lock();
+    int count = (int)Application["sessioncount"];
+    Application["sessioncount"] = count - 1;
+    Application.UnLock();
+}
+
+in globelcounter.aspx
+Label1.Text = "Total Visitors = " + Application["sessioncount"].ToString();
+
